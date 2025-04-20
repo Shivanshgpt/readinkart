@@ -1,0 +1,434 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Goodreads | Meet your next favorite book</title>
+    <meta name="description" content="Discover and read more books you'll love, and keep track of the books you want to read. Be part of the world's largest community of book lovers on Goodreads.">
+    
+    <!-- Open Graph meta tags -->
+    <meta property="og:title" content="Goodreads | Meet your next favorite book">
+    <meta property="og:description" content="Discover and read more books you'll love, and keep track of the books you want to read.">
+    <meta property="og:image" content="https://www.goodreads.com/assets/og_image.jpg">
+    <meta property="og:url" content="https://www.goodreads.com">
+    <meta property="og:type" content="website">
+    
+    <!-- Twitter Card tags -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Goodreads | Meet your next favorite book">
+    <meta name="twitter:description" content="Discover and read more books you'll love, and keep track of the books you want to read.">
+    <meta name="twitter:image" content="https://www.goodreads.com/assets/og_image.jpg">
+    <link rel="icon" href="https://www.goodreads.com/favicon.ico" type="image/x-icon">
+    <title>Goodreads | Meet your next favorite book</title>
+
+    <!-- css part begins -->
+        
+    <style>
+    body {
+        margin: 0;
+        font-family: "Lato", "Helvetica Neue", "Helvetica", sans-serif;
+        background: #f4f1ea;
+        color: #333;
+    }
+
+    header {
+        display: flex;
+        justify-content: flex-end;
+        align-items: center;
+        background-color: #f4f1ea;
+        padding: 10px 20px;
+        font-size: 0.9rem;
+    }
+
+    header a {
+        text-decoration: none;
+        color: #382110;
+        margin-left: 20px;
+    }
+
+    
+    /* new feature!! first challenge button tag */
+
+    .challenge-btn {
+      display: inline-block;
+      margin-top: 20px;
+      padding: 12px 24px;
+      background-color: #00635d;
+      color: white;
+      text-decoration: none;
+      font-weight: bold;
+      border-radius: 4px;
+    }
+
+    .challenge-btn:hover {
+      background-color: #004f49;
+    }
+
+    .hero {
+      background-image: url('reading.jpg');
+      background-size: cover;
+      background-position: center;
+      color: #000;
+      padding: 60px 40px;
+      text-align: left;
+    }
+
+    .hero h1 {
+      font-size: 3rem;
+      font-weight: bold;
+      margin-bottom: 20px;
+      color: #000;
+    }
+
+    .hero p {
+      font-size: 1.5rem;
+      color: #000;
+    }
+
+    select {
+      padding: 10px 15px;
+      font-size: 1rem;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+      width: 250px;
+    }
+
+    .select-button {
+      background-color: #4a4a4a;
+      color: white;
+      border: none;
+      padding: 12px 24px;
+      font-size: 1rem;
+      border-radius: 4px;
+      cursor: pointer;
+      margin-top: 20px;
+    }
+
+    .select-button:hover {
+      background-color: #333;
+    }
+    
+    .recommendations {
+      display: flex;
+      justify-content: space-around;
+      padding: 40px 20px;
+      background-color: #fff;
+      flex-wrap: wrap;
+    }
+
+    .rec-column {
+      flex: 1;
+      max-width: 480px;
+      margin: 20px;
+    }
+
+    .rec-column h3 {
+      font-weight: normal;
+      font-size: 1.1rem;
+    }
+
+    .rec-column img {
+      width: 80px;
+      height: 120px;
+      object-fit: cover;
+      margin: 10px 5px;
+    }
+
+    .browse {
+      padding: 40px 20px;
+      background-color: #f4f1ea;
+      text-align: center;
+    }
+
+    .browse input[type="text"] {
+      width: 300px;
+      padding: 10px;
+      font-size: 1rem;
+      margin-bottom: 20px;
+    }
+
+    .genres {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      max-width: 800px;
+      margin: 0 auto;
+    }
+
+    .genres a {
+      margin: 8px 12px;
+      text-decoration: none;
+      color: #00635d;
+    }
+    /* new feature!! Intrest section */
+
+    .interest-section {
+      padding: 40px 20px;
+      background-color: #fff;
+      text-align: center;
+    }
+
+    .interest-section label,
+    .interest-section select {
+      font-size: 1rem;
+      margin: 10px;
+    }
+
+    .interest-section select {
+      padding: 8px;
+      width: 220px;
+    }
+
+    .quote {
+      background-color: #fdf6e3;
+      padding: 40px 20px;
+      text-align: center;
+      font-style: italic;
+    }
+
+    .footer {
+      display: flex;
+      justify-content: space-between;
+      padding: 40px 20px;
+      font-size: 0.9rem;
+      background: #f4f1ea;
+      flex-wrap: wrap;
+    }
+
+    .footer div {
+      flex: 1 1 200px;
+      margin: 10px;
+    }
+
+    .footer a {
+      display: block;
+      text-decoration: none;
+      color: #382110;
+      margin: 6px 0;
+    }
+
+    .discover-section {
+      max-width: 1000px;
+      margin: 20px auto;
+      background-color: #ffffff;
+      padding: 20px 30px;
+      border-radius: 5px;
+      box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+    }
+
+    .arrow-right {
+      display: inline-block;
+      width: 0;
+      height: 0;
+      border-top: 15px solid transparent;
+      border-bottom: 15px solid transparent;
+      border-left: 15px solid #d3d0c3;
+    }
+  </style>
+</head>
+<body>
+  <div style="position: absolute; top: 14px; right: 20px; font-family: 'Helvetica', 'Arial', sans-serif; font-size: 14px;">
+    <a href="/signin" style="
+      text-decoration: none;
+      color: #382110;
+      background-color: #f4f1ea;
+      border: 1px solid #d6d0c4;
+      padding: 6px 12px;
+      border-radius: 3px;
+      margin-right: 10px;
+    ">Sign In</a>
+    
+    <a href="/signup" style="
+      text-decoration: none;
+      color: #382110;
+      background-color: #f4f1ea;
+      border: 1px solid #d6d0c4;
+      padding: 6px 12px;
+      border-radius: 3px;
+    ">Sign up with email</a>
+  </div>
+
+  <div style="padding: 20px 0 30px 20px; background-color: #f4f1ea;">
+    <a href="/" style="text-decoration: none;">
+      <h1 style="
+        font-family: 'Times New Roman', Times, serif;
+        font-size: 50px;
+        font-weight: 100;
+        color: #5c3e14;
+        margin: 0;
+        line-height: 0.9;
+        letter-spacing: -0.5px;
+      ">
+        <span style="color: #87613e;">good</span>reads
+      </h1>
+    </a>
+  </div>
+
+  <div class="hero">
+    <h1>2025 Reading Challenge</h1>
+    <p>Track your books, set a goal, and read more this year.</p>
+    <a href="#" class="challenge-btn">Join the Challenge</a>
+  </div>
+
+  <div class="discover-section">
+    <h2 style="font-family: 'Helvetica', Arial, sans-serif; font-size: 24px; margin-bottom: 20px;">What will <i>you</i> discover?</h2>
+    
+    <!-- Meagan's section -->
+    <div style="margin-bottom: 40px;">
+      <p style="font-family: 'Helvetica', Arial, sans-serif; margin-bottom: 15px;">Because ♥Meagan♥ liked...</p>
+      
+      <div style="display: flex; justify-content: space-between; margin-bottom: 10px;">
+        <!-- Book images for Meagan -->
+        <div style="display: flex; width: 70%;">
+          <img src="https://covers.openlibrary.org/b/id/10556457-L.jpg" alt="Memoirs of a Geisha" style="height: 150px; margin-right: 10px; box-shadow: 2px 2px 5px rgba(0,0,0,0.2);">
+          <img src="https://covers.openlibrary.org/b/id/10556458-L.jpg" alt="The Guernsey Literary" style="height: 150px; margin-right: 10px; box-shadow: 2px 2px 5px rgba(0,0,0,0.2);">
+          <img src="https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1409595968l/929._SX98_.jpg" alt="Water for Elephants" style="height: 150px; margin-right: 10px; box-shadow: 2px 2px 5px rgba(0,0,0,0.2);">
+          <img src="https://covers.openlibrary.org/b/id/10556460-L.jpg" alt="The book" style="height: 150px; margin-right: 10px; box-shadow: 2px 2px 5px rgba(0,0,0,0.2);">
+        </div>
+        
+        <!-- Right arrow and recommendation -->
+        <div style="display: flex; align-items: center; width: 30%;">
+          <div class="arrow-right" style="margin: 0 15px;"></div>
+          <div>
+            <img src="https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1348810069l/325779._SX98_.jpg" alt="Moloka'i" style="height: 150px; box-shadow: 2px 2px 5px rgba(0,0,0,0.2);">
+            <p style="font-family: 'Helvetica', Arial, sans-serif; margin-top: 10px; font-weight: bold;">
+              She discovered:<br>
+              <span>Historical Fiction, Book Club</span>
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+    
+    <hr style="border: none; height: 1px; background-color: #e8e6df; margin: 30px 0;">
+    
+    <!-- Deborah's section -->
+    <div style="margin-bottom: 40px;">
+      <p style="font-family: 'Helvetica', Arial, sans-serif; margin-bottom: 15px;">Because Deborah liked...</p>
+      
+      <div style="display: flex; justify-content: space-between; margin-bottom: 10px;">
+        <!-- Book images for Deborah -->
+        <div style="display: flex; width: 70%;">
+          <img src="https://covers.openlibrary.org/b/id/10556461-L.jpg" alt="Boneshaker" style="height: 150px; margin-right: 10px; box-shadow: 2px 2px 5px rgba(0,0,0,0.2);">
+          <img src="https://covers.openlibrary.org/b/id/10556462-L.jpg" alt="The Anubis Gates" style="height: 150px; margin-right: 10px; box-shadow: 2px 2px 5px rgba(0,0,0,0.2);">
+          <img src="https://covers.openlibrary.org/b/id/10556463-L.jpg" alt="Clementine" style="height: 150px; margin-right: 10px; box-shadow: 2px 2px 5px rgba(0,0,0,0.2);">
+          <img src="https://covers.openlibrary.org/b/id/10556464-L.jpg" alt="The Buntline Special" style="height: 150px; margin-right: 10px; box-shadow: 2px 2px 5px rgba(0,0,0,0.2);">
+        </div>
+        
+        <!-- Right arrow and recommendation -->
+        <div style="display: flex; align-items: center; width: 30%;">
+          <div class="arrow-right" style="margin: 0 15px;"></div>
+          <div>
+            <img src="https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1317793965l/11468377._SX98_.jpg" alt="Infernal Devices" style="height: 150px; box-shadow: 2px 2px 5px rgba(0,0,0,0.2);">
+            <p style="font-family: 'Helvetica', Arial, sans-serif; margin-top: 10px; font-weight: bold;">
+              She discovered:<br>
+              <span>Steam Punk, Science Fiction, Fantasy</span>
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+    
+    <!-- Search section -->
+    <h2 style="font-family: 'Helvetica', Arial, sans-serif; font-size: 22px; margin: 30px 0 15px 0;">Search and browse books</h2>
+    <div style="display: flex; align-items: center;">
+      <input type="text" placeholder="Title / Author / ISBN" style="padding: 8px 12px; width: 400px; border: 1px solid #DCD6CC; border-radius: 3px; font-size: 16px;">
+      <button style="background-color: #F4F1EA; border: 1px solid #D6D0C4; border-radius: 3px; padding: 8px 12px; margin-left: 5px; cursor: pointer;">
+        <img src="https://www.goodreads.com/assets/layout/magnifying_glass.png" alt="Search" style="height: 16px;">
+      </button>
+    </div>
+  </div>
+
+  <div class="interest-section">
+    <h2>What's your reading interest?</h2>
+    <p>Select the type of books you love to read and get recommendations.</p>
+    <label for="genre-select">Choose a genre:</label>
+    <select id="genre-select">
+      <option value="">Please choose an option</option>
+      <option value="fiction">Fiction</option>
+      <option value="nonfiction">Nonfiction</option>
+      <option value="mystery">Mystery</option>
+      <option value="fantasy">Fantasy</option>
+      <option value="biography">Biography</option>
+      <option value="romance">Romance</option>
+      <option value="selfhelp">Self Help</option>
+      <option value="science">Science</option>
+    </select>
+    <div style="text-align: center; margin-top: 5px;">
+      <a href="#" onclick="getBook(); return false;" style="text-decoration: none;">
+        <button style="
+          background-color: green;
+          color: white;
+          border: none;
+          padding: 10px 20px;
+          font-size: 16px;
+          border-radius: 10px;
+          cursor: pointer;
+        ">Select Book</button>
+      </a>
+    </div>
+  </div>
+
+  <div class="browse">
+    <h2>Search and browse books</h2>
+    <input type="text" placeholder="Title / Author / ISBN" />
+    <div class="genres">
+      <a href=>Art</a>
+      <a href=>Biography</a>
+      <a href=>Business</a>
+      <a href=>Children's</a>
+      <a href=>Christian</a>
+      <a href=>Classics</a>
+      <a href=>Comics</a>
+      <a href=>Cookbooks</a>
+      <a href=>Ebooks</a>
+      <a href=>Fantasy</a>
+      <a href=>Fiction</a>
+      <a href=>Graphic Novels</a>
+      <a href=>Historical Fiction</a>
+      <a href=>History</a>
+      <a href=>Horror</a>
+      <a href=>Memoir</a>
+      <a href=>Music</a>
+      <a href=>Mystery</a>
+      <a href=>Nonfiction</a>
+        <a href=>Poetry</a>
+        <a href=>Psychology</a>
+        <a href=>Romance</a>
+        <a href=>Science</a>
+        <a href=>Science Fiction</a>
+        <a href=>Self Help</a>
+        <a href=>Sports</a>
+        <a href=>Thriller</a>
+        <a href=>Travel</a>
+        <a href=>Young Adult</a>
+    </div>
+    </div>
+
+    <div class="quote">
+    <p>"A room without books is like a body without a soul."</p>
+    <p><strong>— Marcus Tullius Cicero</strong></p>
+    </div>
+
+    <div class="footer">
+    <div>
+        <strong>COMPANY</strong>
+        <a href=>About us</a>
+        <a href=>Careers</a>
+        <a href=>Terms</a>
+        <a href=>Privacy</a>
+    </div>
+    <div>
+        <strong>WORK WITH US</strong>
+        <a href=>Authors</a>
+        <a href=>Advertise</a>
+    </div>
+    <div>
+        <strong>CONNECT</strong>
+        <a href=>Facebook</a>
+        <a href=>Twitter</a>
+        <a href=>Instagram</a>
+    </div>
+    </div>
+</body>
+</html>
